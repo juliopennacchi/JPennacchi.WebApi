@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace JPennacchi.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/file")]
     public class FileController : ControllerBase
     {
         private readonly IStorageService _localStorageService;
@@ -14,6 +14,7 @@ namespace JPennacchi.WebApi.Controllers
         }
 
         [HttpPost]
+        [Route("upload")]
         public async Task<string> UploadFile([FromForm] IFormFile file) =>
             await _localStorageService.SaveFile(file);
         
