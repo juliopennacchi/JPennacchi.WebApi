@@ -3,7 +3,6 @@ using JPennacchi.Application.RequestReponse.Documento;
 using JPennacchi.Application.Services.Implementations;
 using JPennacchi.Application.Services.Interfaces;
 using JPennacchi.Application.Validators;
-using JPennacchi.Infra.Repository.Repositories;
 using JPennacchi.Infra.Repository.Repositories.Implementations;
 using JPennacchi.Infra.Repository.Repositories.Interfaces;
 using Microsoft.Extensions.Configuration;
@@ -21,18 +20,19 @@ namespace JPennacchi.Infra.DI
             return services;
         }
 
-        public static void RegisterValidators(IServiceCollection services)
+        private static void RegisterValidators(IServiceCollection services)
         {
             services.AddScoped<IValidator<ObterDocumentoRequest>, ObterDocumentoValidator>();
         }
 
-        public static void RegisterServices(IServiceCollection services)
+        private static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<IDocumentoService, DocumentoService>();
             services.AddScoped<IUsuarioService, UsuarioService>();
+            services.AddScoped<IStorageService, LocalStorageFileService>();
         }
 
-        public static void RegisterRepositories(IServiceCollection services)
+        private static void RegisterRepositories(IServiceCollection services)
         {
             services.AddScoped<IDocumentoRepository, DocumentoRepository>();
             services.AddScoped<IUsuarioRepository, UsuarioRepository>();
