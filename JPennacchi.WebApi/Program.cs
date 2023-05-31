@@ -9,8 +9,14 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
+
+//Add appseting by environment
+builder.WebHost.ConfigureAppConfiguration((webBuilder, configuration) =>
+{
+    configuration.AddJsonFile(GetValueAppSettingsEnvironment(), optional: false, reloadOnChange: true);
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opt => 
@@ -74,3 +80,21 @@ app.UseCors(builder =>
 });
 
 app.Run();
+
+static string GetValueAppSettingsEnvironment()
+{
+    try
+    {
+        var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+
+        if (environmentName == string.Empty)
+            throw new Exception("A variável de ambiente ASPNETCORE_ENVIRONMENT não está configurada para um ambiente válido.");
+
+        return $"appsettings.{environmentName}.json";
+
+    }
+    catch (Exception ex)
+    {
+        throw new Exception(ex.Message);
+    }
+}

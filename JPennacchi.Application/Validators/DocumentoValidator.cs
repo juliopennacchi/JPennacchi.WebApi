@@ -12,6 +12,12 @@ namespace JPennacchi.Application.Validators
                 .NotEmpty()
                 .WithMessage("Deve informar o tipo do documento");
 
+            //RuleFor(x => x.ObterResultado((int)x.TipoDocumento))
+            //    .Custom((result, context) =>
+            //    {
+            //        if(!result.IsValid)
+            //            context.AddFailure(result.Message);
+            //    });
         }
     }
 }
