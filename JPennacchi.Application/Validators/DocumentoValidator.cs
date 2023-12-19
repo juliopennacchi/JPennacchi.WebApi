@@ -7,6 +7,11 @@ namespace JPennacchi.Application.Validators
     {
         public ObterDocumentoValidator()
         {
+            RuleFor(x => x.Proprietario)
+                .NotNull()
+                .NotEmpty()
+                .WithMessage("Deve informar o proprietário");
+
             RuleFor(x => x.TipoDocumento)
                 .NotNull()
                 .NotEmpty()

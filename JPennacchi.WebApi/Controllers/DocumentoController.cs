@@ -16,14 +16,14 @@ namespace JPennacchi.WebApi.Controllers
             this.service = service;
         }
 
-
+        [Route("Obter")]
         [HttpGet]
         [Consumes("application/json")]
-        //[ProducesResponseType(typeof(GetResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(200)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
-        public ActionResult ObterDocumentoPorTipoAsync([FromQuery] ObterDocumentoRequest request)
+        public ActionResult ObterDocumentoPorTipoAsync([FromBody] ObterDocumentoRequest request)
         {
             var response = service.ObterDocumentoAsync(request).Result;
 

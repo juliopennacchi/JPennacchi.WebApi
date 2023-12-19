@@ -19,9 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infraestructure Layer", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPennacchi.Infra.Common", "JPennacchi.Infra.Common\JPennacchi.Infra.Common.csproj", "{4940D260-5CD2-45FD-BC4A-3A7716BADCDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPennacchi.Infra.Repository", "JPennacchi.Infra.Repository\JPennacchi.Infra.Repository.csproj", "{430925AB-896E-4188-AA77-96A82CE464BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPennacchi.Infra.Repository", "JPennacchi.Infra.Repository\JPennacchi.Infra.Repository.csproj", "{430925AB-896E-4188-AA77-96A82CE464BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPennacchi.Infra.DI", "JPennacchi.Infra.DI\JPennacchi.Infra.DI.csproj", "{9184ECF0-033C-4504-897B-63410DAD735D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JPennacchi.Infra.DI", "JPennacchi.Infra.DI\JPennacchi.Infra.DI.csproj", "{9184ECF0-033C-4504-897B-63410DAD735D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Test Layer", "4. Test Layer", "{34A88D24-1689-4D78-A2C0-B523F575D158}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JPennacchi.Application.Test", "JPennacchi.Application.Test\JPennacchi.Application.Test.csproj", "{066E956E-B488-4519-9BDE-7BF1EF9BCB2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +57,10 @@ Global
 		{9184ECF0-033C-4504-897B-63410DAD735D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9184ECF0-033C-4504-897B-63410DAD735D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9184ECF0-033C-4504-897B-63410DAD735D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066E956E-B488-4519-9BDE-7BF1EF9BCB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066E956E-B488-4519-9BDE-7BF1EF9BCB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066E956E-B488-4519-9BDE-7BF1EF9BCB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066E956E-B488-4519-9BDE-7BF1EF9BCB2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +72,7 @@ Global
 		{4940D260-5CD2-45FD-BC4A-3A7716BADCDC} = {B5526E93-BD74-42AB-918D-61DA132477ED}
 		{430925AB-896E-4188-AA77-96A82CE464BC} = {B5526E93-BD74-42AB-918D-61DA132477ED}
 		{9184ECF0-033C-4504-897B-63410DAD735D} = {B5526E93-BD74-42AB-918D-61DA132477ED}
+		{066E956E-B488-4519-9BDE-7BF1EF9BCB2D} = {34A88D24-1689-4D78-A2C0-B523F575D158}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {24102C39-7CE7-4E2F-8B80-520539639C59}

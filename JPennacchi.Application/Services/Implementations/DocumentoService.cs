@@ -32,7 +32,7 @@ namespace JPennacchi.Application.Services.Implementations
             try
             {
                 //validar request
-                var result = await obterDocumentRequestValidator.ValidateAsync(request);
+                var result = obterDocumentRequestValidator.Validate(request);
 
                 if (!result.IsValid)
                 {
@@ -41,7 +41,7 @@ namespace JPennacchi.Application.Services.Implementations
                 }
 
                 //obter documento
-                var documento = await documentoRepository.ObterDocumentoAsync(request.Proprietario, request.TipoDocumento);
+                var documento = await documentoRepository.ObterDocumentoAsync(request.Proprietario, request.TipoDocumento.Value);
                 response.Documento = documento?.Mapper();
 
                 return response;
